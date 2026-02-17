@@ -1,5 +1,6 @@
-  import * as ort from 'onnxruntime-node'
+  import * as ort from 'onnxruntime-web'
   import jsonData from '../../config.json' with { type: 'json' };
+  //ort.env.wasm.wasmPaths = '/ort/';
 
   type InputVector = {
       distance: number,
@@ -14,7 +15,9 @@
   }
   export default async function runModel(inputVector: InputVector){
     try{
-        const session = await ort.InferenceSession.create('../Models/CautiousAggro_Reward_AggressionComplete.onnx')
+        const session = await ort.InferenceSession.create('/CautiousAggro_Reward_AggressionComplete.onnx', {
+          executionProviders: ['wasm']
+        })
 
     
         const normalizedVector = Float32Array.from([
@@ -28,8 +31,29 @@
           inputVector.Player_ActionCooldown/Math.max(jsonData.FighterSettings.AttackActionCooldown, 
             jsonData.FighterSettings.BlockActionCooldown)
         ])
-    }
-    catch(error){
 
+        const inputTensor = new ort.Tensor('float32', normalizedVector, [1, 7])
+        console.log(session.inputNames)
+        
+        const feeds = {'observation': inputTensor}
+        const results = await session.run(feeds)
+
+        const outputName = (session.outputNames[1] || session.outputNames[0]) as string
+        const outputTensor = results[outputName];
+        if (!outputTensor){
+          throw new Error(`Output name "${outputName}" not found in results.`);
+        }
+
+
+        const outputData = outputTensor.data
+
+        console.log('Output Probabilities:', outputData);
+      
+
+        
+
+    }
+    catch(e){
+      console.error(`Failed to run inference; ${e}`)
     }
   }
