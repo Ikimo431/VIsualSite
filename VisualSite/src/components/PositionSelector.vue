@@ -1,7 +1,6 @@
 <script setup lang="ts">
 
-import {onBeforeUnmount, onMounted, ref, type Ref} from 'vue'
-import runModel from '../Utils/onnxConnector';
+import {onBeforeUnmount, onMounted, ref} from 'vue'
     type Point = {
         x: number,
         y: number

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import {ref, type Ref} from 'vue'
+    import {type Ref} from 'vue'
 
     const props = defineProps<{properties: {name: string, num: Ref<number>}[]}>()
 
