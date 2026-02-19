@@ -13,9 +13,7 @@ import {onBeforeUnmount, onMounted, ref} from 'vue'
     }>()
     const aiPixelPos = ref<Point>({x: 0, y: 0})
     const playerPixelPos = ref<Point>({x: 0, y: 0})
-    const boxHeightPx = ref<number>(30*window.innerWidth/100)
-    const boxWidthPx = ref<number>(30*window.innerWidth/100)
-    const labelOffset = ref<string>('30.5vw')
+  
 
     
     const selectedButton = ref<'AI_Bot' | 'Player'>('AI_Bot')
