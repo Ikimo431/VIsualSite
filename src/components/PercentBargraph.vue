@@ -12,6 +12,7 @@
     function calcHeight(num: number) {
         return pixelHeight*num;
     }
+    //test
     
 </script>
 
