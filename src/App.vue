@@ -11,7 +11,7 @@
         y: number
     }
 
-  const selectedModel = ref<string>('CuatiousAggro_reward_AggressionComplete')
+  const selectedModel = ref<string>('CuatiousAggro_Reward_AggressionComplete')
 
   //input values
   const AI_Bot_Pos = ref<Point>({x: 4, y: 6})
@@ -69,7 +69,7 @@
 
 
   import PositionSelector from './components/PositionSelector.vue';
-import PercentBargraph from './components/PercentBargraph.vue';
+  import PercentBargraph from './components/PercentBargraph.vue';
 </script>
 
 <template id = "main">
@@ -78,9 +78,18 @@ import PercentBargraph from './components/PercentBargraph.vue';
       <div class="stateInputs">
       <label for="Selected model" :style="{marginBottom: '0.5rem'}">AI Model</label>
       <select v-model="selectedModel" name="SelectedModel">
+         <option value="Beserker_Reward_AggressionComplete">Beserker_Reward_AggressionComplete</option>
+         <option value="CautiousAggro_BasicComplete">CautiousAggro_BasicComplete</option>
+
         <option value="CautiousAggro_Reward_AggressionComplete">CautiousAggro_Reward_AggressionComplete</option>
+        
         <option value="Coward_Reward_ChaseComplete">Coward_Reward_ChaseComplete</option>
-        <option value="Smart_BasicComplete">Smart_BasicComplete</option>
+        <option value="Coward_BasicComplete">Coward_BasicComplete</option>
+        <option value="Coward_Reward_AggressionComplete">Coward_Reward_AggressionComplete</option>
+       
+
+        
+        
       </select>
       <div className="InputRow">
         <label for="PlayerHealth">Player Health</label>

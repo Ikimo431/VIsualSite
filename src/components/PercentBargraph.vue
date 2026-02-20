@@ -34,7 +34,7 @@
     <div class="graphContainer" :style="{'--label-offset': labelOffset}">
         <div v-for="bar in properties" class="bar" :style="{height: calcHeight(bar.num.value)+'px'}">
             <p class="label bottom-label">{{ bar.name }}</p>
-            <p class="label top-label">{{ parseFloat(bar.num.value.toFixed(2))*100 }}%</p>
+            <p class="label top-label">{{ (parseFloat(bar.num.value.toFixed(2))*100).toFixed(2) }}%</p>
         </div>
         <p class="axisLabel" style="top: 0">100%</p>
         <p class="axisLabel" style="bottom: 0">0%</p>
