@@ -11,7 +11,7 @@
         y: number
     }
 
-  const selectedModel = ref<string>('CuatiousAggro_Reward_AggressionComplete')
+  const selectedModel = ref<string>('CautiousAggro_Reward_AggressionComplete')
 
   //input values
   const AI_Bot_Pos = ref<Point>({x: 4, y: 6})
@@ -82,7 +82,7 @@
          <option value="CautiousAggro_BasicComplete">CautiousAggro_BasicComplete</option>
 
         <option value="CautiousAggro_Reward_AggressionComplete">CautiousAggro_Reward_AggressionComplete</option>
-        
+
         <option value="Coward_Reward_ChaseComplete">Coward_Reward_ChaseComplete</option>
         <option value="Coward_BasicComplete">Coward_BasicComplete</option>
         <option value="Coward_Reward_AggressionComplete">Coward_Reward_AggressionComplete</option>
