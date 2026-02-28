@@ -114,6 +114,16 @@
           <option value="CautiousAggro_BasicEntropy64Complete">CautiousAggro_BasicEntropy64Complete</option>
           <option value="CautiousAggro_RewardAgressionEntropy64Complete">CautiousAggro_RewardAgressionEntropy64Complete</option>
           <option value="CautiousAggro_RewardChaseEntropy64Complete">CautiousAggro_RewardChaseEntropy64Complete</option>
+
+
+          <option value="CautiousAggro_BasicBaseCandidateComplete">CautiousAggro_BasicBaseCandidateComplete</option>
+          <option value="CautiousAggro_RewardAgressionBaseCandidateComplete">CautiousAggro_RewardAgressionBaseCandidateComplete</option>
+          <option value="CautiousAggro_RewardChaseBaseCandidateComplete">CautiousAggro_RewardChaseBaseCandidateComplete</option>
+
+          <option value="CautiousAggro_BasicBaseCandidate2Complete">CautiousAggro_BasicBaseCandidate2Complete</option>
+          <option value="CautiousAggro_RewardAgressionBaseCandidate2Complete">CautiousAggro_RewardAgressionBaseCandidate2Complete</option>
+          <option value="CautiousAggro_RewardChaseBaseCandidate2Complete">CautiousAggro_RewardChaseBaseCandidate2Complete</option>
+
       </select>
       <select v-model="selectedModel" v-if="selectedModelType=='Coward'" name="SelectedModel">
         <option value="Coward_BasicComplete">Coward_BasicComplete</option>
@@ -124,6 +134,16 @@
 
         <option value="Coward_Reward_ChaseCompletev3">Coward_Reward_ChaseCompletev3</option>
         <option value="Coward_Reward_AggressionCompletev3">Coward_Reward_AggressionCompletev3</option>
+
+        
+        <option value="Coward_Reward_AggressionBaseCandidateComplete">Coward_Reward_AggressionBaseCandidateComplete</option>
+        <option value="Coward_Reward_ChaseBaseCandidateComplete">Coward_Reward_ChaseBaseCandidateComplete</option>
+        <option value="Coward_Reward_AggressionBaseCandidate2Complete">Coward_Reward_AggressionBaseCandidate2Complete</option>
+        <option value="Coward_Reward_ChaseBaseCandidate2Complete">Coward_Reward_ChaseBaseCandidate2Complete</option>
+        
+        
+
+
 
       </select>
       
