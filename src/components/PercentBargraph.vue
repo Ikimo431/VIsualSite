@@ -5,6 +5,7 @@
 
     const graphHeightPx = ref(0);
     const labelOffset = ref('3rem');
+   
 
     onMounted(() => {
         const updateHeight = () => {
@@ -30,6 +31,7 @@
 <template>
     <div class = 'card':style="{display: 'flex', flexDirection: 'column', alignItems: 'center'}">
     <h3>Model Output Probabilities</h3>
+    
     
     <div class="graphContainer" :style="{'--label-offset': labelOffset}">
         <div v-for="bar in properties" class="bar" :style="{height: calcHeight(bar.num.value)+'px'}">

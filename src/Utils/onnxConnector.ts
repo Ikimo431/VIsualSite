@@ -11,7 +11,7 @@
       AI_Actioncooldown: number,
       Player_ActionCooldown: number
   }
-  export default async function runModel(model: string, inputVector: InputVector){
+  export default async function runModel(model: string, inputVector: InputVector, inputTensorScaler: number){
     try{
         const tickConversion = (1/jsonData.UnitRatios.TickToSeconds)
         const meterConversion = (1/jsonData.UnitRatios.UnitsToMeters)
@@ -27,13 +27,13 @@
 
     
         const normalizedVector = Float32Array.from([
-          (inputVector.distance*meterConversion)/Math.sqrt(XLimit**2+YLimit**2),
-          inputVector.angle/(Math.PI*2),
-          inputVector.playerHealth/100,
-          inputVector.AIHealth/100,
-          Math.exp(-inputVector.AI_timesinceHit*tickConversion/2.0), 
-          inputVector.AI_Actioncooldown*tickConversion/Math.max(AttackActionCooldown, BlockActionCooldown), 
-          inputVector.Player_ActionCooldown*tickConversion/Math.max(AttackActionCooldown, BlockActionCooldown)
+          (inputVector.distance*meterConversion)/Math.sqrt(XLimit**2+YLimit**2)*inputTensorScaler,
+          (inputVector.angle/(Math.PI*2))*inputTensorScaler,
+          (inputVector.playerHealth/100)*inputTensorScaler,
+          (inputVector.AIHealth/100)*inputTensorScaler,
+          (Math.exp(-inputVector.AI_timesinceHit*tickConversion/2.0)*inputTensorScaler), 
+          (inputVector.AI_Actioncooldown*tickConversion/Math.max(AttackActionCooldown, BlockActionCooldown))*inputTensorScaler, 
+          (inputVector.Player_ActionCooldown*tickConversion/Math.max(AttackActionCooldown, BlockActionCooldown))*inputTensorScaler
         ])
         console.log("INPUT TENSOR: " + normalizedVector)
 

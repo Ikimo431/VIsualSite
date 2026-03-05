@@ -13,7 +13,7 @@
 
   const selectedModel = ref<string>('CautiousAggro_Reward_AggressionComplete')
   const selectedModelType = ref<string | undefined>(undefined)
-
+  const InputTensorScaler = ref<number>(1);
   //input values
   const AI_Bot_Pos = ref<Point>({x: 4, y: 6})
   const Player_Pos = ref<Point>({x: 4, y: 2})
@@ -43,7 +43,7 @@
    
   })
   watch([AI_Bot_Pos, Player_Pos, distance, angle, playerhealth, 
-        aibothealth, playercooldown, aibotcooldown, ai_timeSinceHit, selectedModel], 
+        aibothealth, playercooldown, aibotcooldown, ai_timeSinceHit, selectedModel, InputTensorScaler], 
       async ()=>{
          const outputProbs = await runModel(selectedModel.value, {
           distance: distance.value,
@@ -52,8 +52,8 @@
           AIHealth: aibothealth.value,
           AI_timesinceHit: ai_timeSinceHit.value,
           AI_Actioncooldown: aibotcooldown.value,
-          Player_ActionCooldown: playercooldown.value
-        })
+          Player_ActionCooldown: playercooldown.value,
+        }, InputTensorScaler.value)
         if (!outputProbs){
           throw new Error('Failed to get output probabilities')
         }
@@ -146,6 +146,8 @@
 
 
       </select>
+      <label for="InputTensorScaler">Input Vector Multiplier</label>
+      <input name="InputTensorScaler" type="number" min=1 v-model="InputTensorScaler">
       
       <div className="InputRow">
         <label for="PlayerHealth">Player Health</label>
