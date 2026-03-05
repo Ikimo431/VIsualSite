@@ -169,10 +169,11 @@
         @update:ai="AI_Bot_Pos=$event" @update:player="Player_Pos=$event"
         ></PositionSelector>
         <PercentBargraph :properties="[advanceProb, retreatProb, slProb, srProb, attackProb, blockProb]"></PercentBargraph>
-        <GraphNetVisual></GraphNetVisual>
+        
       </div>
-     
+      
     </form>
+    <GraphNetVisual :model="selectedModel"></GraphNetVisual>
   </div>
   
 </template>
