@@ -60,7 +60,6 @@ async function GetWeights(){
     console.log(model.graph.initializer.length)
 
     const sf = sFactor.value ?? 1
-    let prevLayerName = "input"
     let prevLayerIndex = 0
 
     //stores all the weights in raw bytes
@@ -164,7 +163,7 @@ async function GetWeights(){
                     
             
         // }
-        prevLayerName = tensor.name
+       
         prevLayerIndex++
     }
     neurons.value=[...neurons.value, outFeatures]
