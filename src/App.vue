@@ -5,6 +5,9 @@
   const maxHealth = ref<number>(jsonData.FighterSettings.Health)
   const blockCooldown = ref<number>(jsonData.FighterSettings.BlockActionCooldown)
   const attackCooldown = ref<number>(jsonData.FighterSettings.AttackActionCooldown)
+  const meterConversion = (1/jsonData.UnitRatios.UnitsToMeters)
+  const arenaHeight = jsonData.ArenaSettings.Height*meterConversion
+  const arenaWidth = jsonData.ArenaSettings.Length*meterConversion
 
   type Point = {
         x: number,
@@ -165,7 +168,7 @@
       <input type="number" min="0"name="AItsh" v-model="ai_timeSinceHit" :style="{marginBottom: '5rem'}">
       </div>
       <div class="PosAndGraph">
-        <PositionSelector :aibotpos=AI_Bot_Pos :playerpos = Player_Pos :width=8 :height=8
+        <PositionSelector :aibotpos=AI_Bot_Pos :playerpos = Player_Pos :width=arenaWidth :height=arenaHeight
         @update:ai="AI_Bot_Pos=$event" @update:player="Player_Pos=$event"
         ></PositionSelector>
         <PercentBargraph :properties="[advanceProb, retreatProb, slProb, srProb, attackProb, blockProb]"></PercentBargraph>

@@ -6,8 +6,8 @@
     },
     "ArenaSettings":
     {
-        "Length": 8,
-        "Width": 8
+        "Length": 24,
+        "Height": 24
     },
     "FighterSettings":{
         "BlockActionCooldown": 3,
