@@ -241,7 +241,7 @@ function drawLine(n1: HTMLElement, n2: HTMLElement, weight: number){
 <template>
     <section class="NNVisualCard">
        
-        <h3>Nueral Network Visual</h3>
+        <h3>Neural Network Visual</h3>
         <label for = sFactor>Simplification Factor</label>
         <input v-model="sFactor" name ='sFactor' type="number" min=1 value=1 placeholder="1"/>
         <h3 v-if="rendering">Loading...</h3>
