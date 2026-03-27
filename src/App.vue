@@ -171,6 +171,11 @@
 
         <option value="FC_8RevisedCautiousAggro_Adam64Complete">FC_8RevisedCautiousAggro_Adam64Complete</option>
         <option value="FC_8RevisedCautiousAggro_AdamW64Complete">FC_8RevisedCautiousAggro_AdamW64Complete</option>
+
+        <option value="FC_8RevisedCautiousAggro_Adam4LayerComplete">FC_8RevisedCautiousAggro_Adam4LayerComplete</option>
+        <option value="FC_8RevisedCautiousAggro_AdamW4LayerComplete">FC_8RevisedCautiousAggro_AdamW4LayerComplete</option>
+
+        
       </select>
       <select v-model="selectedModel" v-if="selectedModelType=='Coward' && selectedModelVersion=='V2'" name="SelectedModel">
         <option value="FC_8CowardAdamWComplete">FC_8CowardAdamWComplete</option>
