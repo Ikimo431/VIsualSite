@@ -166,11 +166,16 @@
         <option value="InRangeFeatureTestComplete">InRangeFeatureTestComplete</option>
         <option value="FC_8CautiousAggroComplete">FC_8CautiousAggroComplete</option>
         <option value="FC_8CautiousAggroAdamWComplete">FC_8CautiousAggroAdamWComplete</option>
-         <option value="FC_8RevisedCautiousAggro_AdamComplete">FC_8RevisedCautiousAggro_AdamComplete</option>
+        <option value="FC_8RevisedCautiousAggro_AdamComplete">FC_8RevisedCautiousAggro_AdamComplete</option>
+        <option value="FC_8RevisedCautiousAggro_AdamWComplete">FC_8RevisedCautiousAggro_AdamWComplete</option>
+
+        <option value="FC_8RevisedCautiousAggro_Adam64Complete">FC_8RevisedCautiousAggro_Adam64Complete</option>
+        <option value="FC_8RevisedCautiousAggro_AdamW64Complete">FC_8RevisedCautiousAggro_AdamW64Complete</option>
       </select>
       <select v-model="selectedModel" v-if="selectedModelType=='Coward' && selectedModelVersion=='V2'" name="SelectedModel">
         <option value="FC_8CowardAdamWComplete">FC_8CowardAdamWComplete</option>
         <option value="FC_8RevisedCowardAdamComplete">FC_8RevisedCowardAdamComplete</option>
+        <option value="FC_8RevisedCowardAdamWomplete">FC_8RevisedCowardAdamWomplete</option>
       </select>
 
 
